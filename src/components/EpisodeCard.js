@@ -1,57 +1,16 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
+import React from "react";
+import { Card} from 'semantic-ui-react'
 
-// const EpisodeCard = (props) => {
-//   const [episode, setEpisode] = useState();
- 
-//   useEffect(() => {
-//     const id = props.match.params.id;
-//     // change ^^^ that line and grab the id from the URL
-//     // You will NEED to add a dependency array to this effect hook
+const EpisodeCard = props => {
+  return (
+    <Card>
+    <Card.Content>
+      <Card.Header>{props.name}</Card.Header>
+      <Card.Meta>{props.air_date}</Card.Meta>
+      <Card.Description>{props.episode}</Card.Description>
+    </Card.Content>
+    </Card>
+  );
+}
 
-//        axios
-//         .get(`https://rickandmortyapi.com/api/episode/${id}`)
-//         .then(response => {
-//           setEpisode(response.data);
-//         })
-//         .catch(error => {
-//           console.error(error);
-//         });
-
-//   },[]);
-  
-//   // Uncomment this only when you have moved on to the stretch goals
-//   // const saveMovie = () => {
-//   //   const addToSavedList = props.addToSavedList;
-//   //   addToSavedList(movie)
-//   // }
-
-//   if (!movie) {
-//     return <div>Loading movie information...</div>;
-//   }
-
-//   const { title, director, metascore, stars } = movie;
-//   return (
-//     <div className="save-wrapper">
-//       <div className="movie-card">
-//         <h2>{title}</h2>
-//         <div className="movie-director">
-//           Director: <em>{director}</em>
-//         </div>
-//         <div className="movie-metascore">
-//           Metascore: <strong>{metascore}</strong>
-//         </div>
-//         <h3>Actors</h3>
-
-//         {stars.map(star => (
-//           <div key={star} className="movie-star">
-//             {star}
-//           </div>
-//         ))}
-//       </div>
-//       <div className="save-button">Save</div>
-//     </div>
-//   );
-// }
-
-// export default EpisodeCard;
+export default EpisodeCard;
